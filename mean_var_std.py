@@ -7,9 +7,17 @@ def calculate(list):
     else:
         print("Continued")
 
-list = ([0,1,2,3,4,5,6,7,8])
 
 
+    #return calculations
 
+# list = ([0,1,2,3,4,5,6,7,8])
 
-    return calculations
+# Staging Updated Files
+# git add .
+
+# Commit
+# git commit -m "<message>"
+
+# Push Changes
+# git push
