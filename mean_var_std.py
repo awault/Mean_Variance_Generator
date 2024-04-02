@@ -1,23 +1,26 @@
 import numpy as np
 
-def calculate(list):
-    if len(list) != 9:
-        print("ValueError: List must contain nine numbers.")
+def calculate(a_list):
+    if len(a_list) != 9:
+        raise ValueError("List must contain nine numbers.")
     
-    else:
-        print("Continued")
+    # Convert Shape to 3x3 Array
+    matrix = np.array(a_list).reshape(3,3)
+    print(matrix)
+
+    # Calculate Statistics
+    mean = [list(np.mean(matrix, axis=0)), list(np.mean(matrix, axis=1)), np.mean(matrix)]
+    variance = [list(np.var(matrix, axis=0)), list(np.var(matrix, axis=1)), np.var(matrix)]
+    std_dev = [list(np.std(matrix, axis=0)), list(np.std(matrix, axis=1)), np.std(matrix)]
+    max_val = [list(np.max(matrix, axis=0)), list(np.max(matrix, axis=1)), np.max(matrix)]
+    min_val = [list(np.min(matrix, axis=0)), list(np.min(matrix, axis=1)), np.min(matrix)]
+    sum_val = [list(np.sum(matrix, axis=0)), list(np.sum(matrix, axis=1)), np.sum(matrix)]
+
+    # Organize as a Dictionary
+    stats = {'mean': mean, 'variance': variance, 'standard deviation': std_dev, 'max': max_val, 'min': min_val, 'sum':sum_val}
+
+    return stats
 
 
 
-    #return calculations
 
-# list = ([0,1,2,3,4,5,6,7,8])
-
-# Staging Updated Files
-# git add .
-
-# Commit
-# git commit -m "<message>"
-
-# Push Changes
-# git push
